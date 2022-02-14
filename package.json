@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "mongodb": "^4.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "catch_a_ride": "npm run start --prefix catch_a_ride",
+    "dev": "concurrently \"npm run server\" \"npm run catch_a_ride\" ",
+    "client-install": "cd catch_a_ride && npm install",
+    "client-build": "cd catch_a_ride && npm run build",
+    "heroku-postbuild": "npm run client-install && npm run client-build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,133 @@
+.header{
+    display: flex;
+    position: fixed;
+    width: 13%;
+    height: 100vh;
+    background-color: rgb(2, 2, 119);
+    color: white;
+    justify-content: space-evenly;
+    transition: 0.6s;
+    z-index: 999;
+}
+.headerClose{
+    display: flex;
+    position: fixed;
+    width: 5%;
+    height: 100vh;
+    background-color: rgb(2, 2, 119);
+    color: white;
+    transition: 0.6s;
+    z-index: 999;
+}
+.links a{
+    display: flex; 
+    width: 100%;
+    text-decoration: none;
+    margin-top: 5vh;
+    margin-left: 50%;
+    color: white;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.linksClose a{
+    display: flex; 
+    width: 100%;
+    text-decoration: none;
+    margin-top: 5vh;
+    margin-left: 0%;
+    color: white;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.links{
+    display:flex;
+    flex-direction: column;
+}
+
+svg{
+    font-size: 200%;
+}
+@media screen and (max-width: 1200px) {    
+    .header{
+        position: fixed;
+        display: flex;
+        width: 50%;
+        height: 100vh;
+        background-color: rgb(2, 2, 119);
+        color: white;
+        justify-content: space-evenly;
+        transition: 0.6s;
+        z-index: 999;
+    }
+    .links{
+        display:flex;
+        flex-direction: column;
+        height: 60%;
+        margin-left: 5%;
+    }
+    
+    .links a{
+        margin-top: 10%;
+    }
+    
+    .headerClose{
+        display: flex;
+        position: fixed;
+        width: 15%;
+        height: 8vh;
+        background-color: rgb(2, 2, 119);
+        color: white;
+        justify-content: space-evenly;
+        transition: 0.6s;
+        z-index: 999;
+    }
+    .headerClose a:nth-child(1){
+        margin-left: 0;
+    }
+
+}
+
+@media screen and (max-width: 425px) {    
+    .header{
+        position: fixed;
+        display: flex;
+        width: 50%;
+        height: 100vh;
+        background-color: rgb(2, 2, 119);
+        color: white;
+        justify-content: space-evenly;
+        transition: 0.6s;
+        z-index: 999;
+    }
+    .links{
+        display:flex;
+        flex-direction: column;
+        height: 60%;
+        margin-left: 5%;
+    }
+    
+    .links a{
+        margin-top: 10%;
+    }
+    
+    .headerClose{
+        display: flex;
+        position: fixed;
+        width: 13%;
+        height: 8vh;
+        background-color: rgb(2, 2, 119);
+        color: white;
+        justify-content: space-evenly;
+        transition: 0.6s;
+        z-index: 999;
+    }
+    .headerClose a:nth-child(1){
+        margin-left: 0;
+    }
+
+}
+

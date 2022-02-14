@@ -1,0 +1,20 @@
+.login{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.headerName{
+    color:red;
+    font-size:300%;
+    text-align:center;
+}
+
+.formApp{
+    border:black 2px solid;
+    padding:2%;
+}
+.buttons{
+    display:flex;
+    justify-content:space-between;
+}
