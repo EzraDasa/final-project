@@ -8,8 +8,22 @@ export default function Login() {
   const { userLogin, setUseLogin } = useContext(UserContext)
   const [messageError, setMessageError] = useState(null)
   const [spinner, setSpinner] = useState(false)
-  const emailRef = useRef('')
-  const passwordRef = useRef('')
+  const emailRef = useRef('');
+  const passwordRef = useRef('');
+
+  const user ={
+    status:200,
+    data:{
+      _id:"",
+      email:"",
+      password:"",
+      name:"",
+      phone:"",
+      idToken:"",
+      Driving:[],
+      Hitchhiking:[],
+      Chat:[]
+    }}
 
   return (
     <form
@@ -34,20 +48,15 @@ export default function Login() {
                 setMessageError(null)
                 setUseLogin(res)
               })
-          })
-          .catch((err) => {
+            })
+            .catch((err) => {
+            setUseLogin(user)
             setSpinner(false)
-            console.log(err.response)
-            if (err.response.data.error.message.length > 45) {
-              setMessageError(
-                'Too many login attempts, please try again later.',
-              )
-            } else {
               setMessageError('Check your email or password')
-            }
-          })
-      }}
-    >
+            })
+            setUseLogin(user)
+          }}
+          >
       <label>Email </label>
       <br />
       <input ref={emailRef} type="text" placeholder="aw@zl.com " required />

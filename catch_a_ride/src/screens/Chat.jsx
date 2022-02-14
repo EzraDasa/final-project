@@ -12,15 +12,14 @@ export default function Chat({ chat, setChat }) {
   const [chatSelect, setChatSelect] = useState('')
 
   useEffect(() => {
+    let isMounted = true; 
     axios
       .get(`/chat/${userLogin.data._id}`)
       .then((res) => {
-        console.log(res.data[0].Chat)
-        setChat(res.data[0].Chat)
+        if(isMounted)setChat(res.data[0].Chat)
       })
-      .catch((err) => {
-        console.log(err)
-      })
+      .catch(() => {})
+      return ()=>{isMounted = false }
   }, [])
 
   return (

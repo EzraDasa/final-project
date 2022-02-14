@@ -7,14 +7,16 @@ export default function Driving({ userDrining, setUserDrining }) {
   const { userLogin, setUseLogin } = useContext(UserContext)
 
   useEffect(() => {
+    let isMounted = true;
     axios
       .get(`/userHitchhiking/${userLogin.data._id}`)
       .then((res) => {
-        setUseLogin(res)
+        if(isMounted)setUseLogin(res)
       })
       .catch((err) => {
         console.log(err)
       })
+      return ()=>{isMounted = false }
   }, [])
   return (
     <div className={style.tableRides}>

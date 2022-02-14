@@ -33,16 +33,17 @@ export default function Catch_A_Ride({
 
   useEffect(() => {
     setSpinner(true)
+    let isMounted = true; 
     axios
       .get('./data/cities.json')
       .then((res) => {
-        setSpinner(false)
-        setDataCities(res.data)
+        if(isMounted){setSpinner(false)
+        setDataCities(res.data)}
       })
-      .catch((err) => {
+      .catch(() => {
         setSpinner(false)
-        console.log(err)
       })
+      return ()=>{isMounted = false}
   }, [])
 
   function addHitchhiker(item) {

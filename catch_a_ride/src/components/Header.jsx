@@ -25,12 +25,14 @@ export default function Header() {
     setUserDrining(userLogin.data.Driving)
     setUserHitchhiking(userLogin.data.Hitchhiking)
     setChat(userLogin.data.Chat)
+    let isMounted = true;
     axios
     .get(`/chat/${userLogin.data._id}`)
     .then((res)=>{
-      setChat(res.data[0].Chat);
+      if(isMounted)setChat(res.data[0].Chat);
     })
-    .catch((err)=>{console.log(err);})
+    .catch(()=>{})
+    return ()=>{isMounted = false }
   },[])
 
   return(
