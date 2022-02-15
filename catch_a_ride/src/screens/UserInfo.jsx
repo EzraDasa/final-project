@@ -4,7 +4,6 @@ import style from '../css/userInfo.module.css'
 import { RiAccountCircleLine } from 'react-icons/ri'
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
 import axios from 'axios'
-import API_KEY from '../logic/API_KEY'
 
 export default function UserInfo() {
   const { userLogin, setUseLogin } = useContext(UserContext)

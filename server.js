@@ -20,7 +20,7 @@ import {
   deleteHitchhiker,
   getUser,
   sendMessage
- } from './utils';
+ } from './utils.js';
 
 const __dirname = path.dirname(__filename);
 
@@ -28,7 +28,6 @@ const app = express();
 
 
 
-// used for json inside body
 app.use(express.json());
 
 app.get("/userHitchhiking/:id",(req, res) => {
