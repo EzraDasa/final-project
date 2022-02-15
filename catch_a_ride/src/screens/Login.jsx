@@ -11,19 +11,7 @@ export default function Login() {
   const emailRef = useRef('');
   const passwordRef = useRef('');
 
-  const user ={
-    status:200,
-    data:{
-      _id:"",
-      email:"",
-      password:"",
-      name:"",
-      phone:"",
-      idToken:"",
-      Driving:[],
-      Hitchhiking:[],
-      Chat:[]
-    }}
+
 
   return (
     <form
@@ -50,11 +38,9 @@ export default function Login() {
               })
             })
             .catch((err) => {
-            setUseLogin(user)
             setSpinner(false)
               setMessageError('Check your email or password')
             })
-            setUseLogin(user)
           }}
           >
       <label>Email </label>

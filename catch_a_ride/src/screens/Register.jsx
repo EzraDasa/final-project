@@ -13,19 +13,7 @@ export default function Register() {
   const confirmPasswordRef = useRef('')
   const [messageError, setMessageError] = useState(null)
   const [spinner, setSpinner] = useState(false)
-  const user ={
-    status:200,
-    data:{
-      _id:"",
-      email:"",
-      password:"",
-      name:"",
-      phone:"",
-      idToken:"",
-      Driving:[],
-      Hitchhiking:[],
-      Chat:[]
-    }}
+ 
   return (
     <form
       onSubmit={(evt) => {
@@ -57,14 +45,12 @@ export default function Register() {
                 setSpinner(false)
               })
               .catch((err) => {
-                setUseLogin(user)
                 console.log(err.response)
                 setSpinner(false)
               })
               setMessageError(null)
             })
             .catch((err) => {
-            setUseLogin(user)
             setMessageError(err.response.data.error.message)
           })
       }}
