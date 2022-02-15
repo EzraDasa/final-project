@@ -81,10 +81,10 @@ app.patch(`/deleteHitchhiker/:id`, (req, res) => {
   deleteHitchhiker(req,res)
 });
 
-// app.use(express.static(path.join(__dirname, "catch_a_ride", "build")));
-// app.get("*", (req, resp) => {
-//   resp.sendFile(path.join(__dirname, "catch_a_ride", "build", "index.html"));
-// });
+app.use(express.static(path.join(__dirname, "catch_a_ride", "build")));
+app.get("*", (req, resp) => {
+  resp.sendFile(path.join(__dirname, "catch_a_ride", "build", "index.html"));
+});
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
